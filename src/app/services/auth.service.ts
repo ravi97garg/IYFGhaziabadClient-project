@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions,Response} from '@angular/http';
+import { HttpClient} from "@angular/common/http";
+import { HttpHeaders} from "@angular/common/http";
 import {User} from "../model/model.user";
-import 'rxjs/add/operator/map';
+
 import {AppComponent} from "../app.component";
 import { environment } from '../../environments/environment';
-import {map} from 'rxjs/internal/operators';
+import {RequestOptions} from "http";
 
 @Injectable()
 export class AuthService {
   static base64Credential:string;
-  constructor(public http: Http,public appComp:AppComponent) { }
+  constructor(public http: HttpClient,public appComp:AppComponent) { }
 
   public logIn(user: User){
 
